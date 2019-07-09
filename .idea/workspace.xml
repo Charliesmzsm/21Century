@@ -60,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/book-information.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="244" column="6" selection-start-line="244" selection-start-column="6" selection-end-line="244" selection-end-column="6" />
+            <state relative-caret-position="139">
+              <caret line="246" lean-forward="true" selection-start-line="246" selection-end-line="246" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -225,7 +225,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1195" />
     <option name="y" value="256" />
     <option name="width" value="950" />
@@ -242,6 +242,11 @@
           <expand>
             <path>
               <item name="21Century" type="b2602c69:ProjectViewProjectNode" />
+              <item name="21Century" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="21Century" type="b2602c69:ProjectViewProjectNode" />
+              <item name="21Century" type="462c0819:PsiDirectoryNode" />
               <item name="21Century" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -453,12 +458,20 @@
       <workItem from="1562552334082" duration="974000" />
       <workItem from="1562564170185" duration="185000" />
       <workItem from="1562640480186" duration="6430000" />
-      <workItem from="1562664530834" duration="246000" />
+      <workItem from="1562664530834" duration="532000" />
     </task>
+    <task id="LOCAL-00001">
+      <created>1562664998199</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1562664998199</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="326102000" />
+    <option name="totallyTimeSpent" value="326388000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -471,8 +484,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2007926" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2007926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -487,7 +501,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32771823" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.35312024" side_tool="true" weight="0.39673105" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.57914764" visible="true" weight="0.50995404" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.57914764" visible="true" weight="0.50995404" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
       <window_info anchor="bottom" id="SonarLint" order="12" />
@@ -524,6 +538,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -923,8 +940,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/book-information.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="244" column="6" selection-start-line="244" selection-start-column="6" selection-end-line="244" selection-end-column="6" />
+        <state relative-caret-position="139">
+          <caret line="246" lean-forward="true" selection-start-line="246" selection-end-line="246" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
