@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指南，带你遨游无尽宇宙</title>
+    <link rel="stylesheet" href="stylesheets/nav.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/login.css">
+    <script src="javascripts/jquery.js"></script>
+    <style>
+        body{
+            height: 100%;
+        }
+        .nav-logo{
+            background-image: url('img/wirter-LOGO.jpg');
+        }
+        .main-left{
+            background-image: url('img/23.jpg');
+            height: 670px;
+        }
+        section{
+            margin: 30px auto;
+        }
+        #button-blue{
+            color:#fdcb6e;
+            border: #fdcb6e solid 4px;
+        }
+        .ease{
+            background-color: #fdcb6e;
+        }
+        .btn-container:hover .ease{
+            background-color: #fdcb6e;
+        }
+    </style>
+</head>
+<body>
+<div class="nav-color"></div>
+<div class="nav">
+
+    <a href="index.html" class="nav-logo">
+    </a>
+    <div class="nav-search">
+        <form action="" >
+            <label for="search" class="nav-search-form">
+                <input type="text" id="search" size="27"  placeholder="玩家一号" class="nav-search-input">
+                <span>&nbsp</span>
+                <button class="nav-search-button">搜索</button>
+            </label>
+
+        </form>
+    </div>
+    <div class="nav-row">
+        <a href="index.html" class="nav-href">指南首页</a>
+    </div>
+</div>
+
+
+<div class="block"></div>
+<div class="main">
+    <div class="main-left">
+    </div>
+    <div class="main-right">
+        <h1>CREATE THE WORLD！</h1>
+        <form enctype="multipart/form-data"  class="login">
+            <label for="username"> </label>
+            <input type="text" id="username" name="username" placeholder="请输入用户ID">
+
+            <label for="password" >  </label>
+            <input type="password" id="password" name="password" placeholder="请输入密码">
+
+            <label for="select"  class="select">
+                <input type="checkbox" id="select" checked>
+                <span>我已阅读并同意相关<span class="blue">服务条款</span>和<span class="blue">隐私政策</span></span>
+            </label>
+            <div id="login">
+                <section>
+                    <div class="btn-container">
+                        <input type="submit" value="登录" id="button-blue">
+                        <div class="ease"></div>
+                    </div>
+                </section>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script >
+    $(function () {
+        $('#login').click(function() {
+            //使用FormData用来上传文件及其他信息
+            var formData = new FormData();
+            formData.append('username',$('#username').val());
+            formData.append('password',$('#password').val());
+            $.ajax({
+                url: "writer-login",
+                type: "POST",
+                data: formData,
+                processData: false,  // 不处理数据
+                contentType: false,   // 不设置内容类型
+                success:function (data) {
+                    console.log(data);
+                    if (data==="0"){
+                        alert('用户名或密码错误');
+                    }else{
+                        alert('登录成功');
+                        //用户名写入sessionStorage
+                        // var user=JSON.parse(data.head);
+                        var result=JSON.parse(data);
+                        // sessionStorage.setItem('username',result);
+                        alert("你好，"+result.username);
+                        var img=result.head;
+                        if(img===null)
+                        {
+                            img='img/30.jpg';
+                        }
+                        alert(img);
+                        sessionStorage.setItem('author-head',img);
+                        sessionStorage.setItem('author-name',result.username);
+                        sessionStorage.setItem('author-email',result.email);
+                        sessionStorage.setItem('author-id',result.authorid);
+
+                        //跳转首页
+                        window.location.href = "writer-area.html";
+                    }
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

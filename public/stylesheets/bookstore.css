@@ -1,0 +1,51 @@
+.nav-logo{
+    background-image: url('../img/reader-LOGO.jpg');
+}
+.right-top{
+    background-image: url(../img/46.jpg);
+
+}
+.special{
+    background-color: #b0deff;
+    border:1px solid #b0deff;
+}
+.book-list{
+    height: 100%;
+    width: 100%;
+
+}
+.delete{
+    width: 50px;
+    display: inline-block;
+    border-bottom: 5px solid #3e3d43;
+    text-align: center;
+    cursor: pointer;
+}
+
+.none{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.none h1{
+    display: inline-block;
+    font-weight: lighter;
+    color:#a9a6a5;
+    font-size: 2em;
+    height: 50px;
+    line-height: 50px;
+}
+.add{
+    width: 100px;
+    height: 50px;
+    background-color: #fdcb6e;
+    border:1px solid #fdcb6e;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: lighter;
+    line-height: 50px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+}

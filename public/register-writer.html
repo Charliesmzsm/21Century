@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>指南，带你遨游无尽宇宙</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/nav.css">
+    <link rel="stylesheet" href="stylesheets/register.css">
+    <style>
+        #button-blue{
+            color:#66cccc;
+            border: #66cccc solid 4px;
+        }
+        .ease{
+            background-color: #66cccc;
+        }
+        .btn-container:hover .ease{
+            background-color: #66cccc;
+        }
+
+
+        .main{
+            height: 612px;
+        }
+        .main-left{
+            background-image: url('img/41.jpg');
+            height: 670px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="nav-color"></div>
+<div class="nav">
+
+    <a href="index.html" class="nav-logo">
+    </a>
+    <div class="nav-search">
+        <form action="" >
+            <label for="search" class="nav-search-form">
+                <input type="text" id="search" size="27"  placeholder="玩家一号" class="nav-search-input">
+                <span>&nbsp</span>
+                <button class="nav-search-button">搜索</button>
+            </label>
+
+        </form>
+    </div>
+    <div class="nav-row">
+        <a href="information-new.html" class="nav-information"></a>
+        <a href="register.html" class="nav-bookstore">我的书架</a>
+    </div>
+</div>
+<div class="block"></div>
+<div class="main">
+    <div class="main-left"></div>
+    <div class="main-right">
+        <h1 class="word">HELLO,WORD</h1>
+        <form enctype="multipart/form-data" class="main-register">
+            <label for="author">
+                <input type="text" name="username" id="author" placeholder="笔名">
+            </label>
+            <label for="email">
+                <input type="text" name="email" id="email" placeholder="填写常用电子邮箱">
+            </label>
+            <label for="password">
+                <input type="text" name="password" placeholder="密码(6-16个字符组成 区分大小写）" id="password">
+            </label>
+            <label for="select" class="select">
+                <input type="checkbox" id="select">
+                <span>我已阅读并同意相关<span class="blue">服务条款</span>和<span class="blue">隐私政策</span></span>
+            </label>
+            <div id="register">
+                <section>
+                    <div class="btn-container">
+                        <input type="submit" value="注册" id="button-blue">
+                        <div class="ease"></div>
+                    </div>
+                </section>
+            </div>
+        </form>
+        <a href="index.html" id="back">返回主页</a>
+    </div>
+
+</div>
+
+<script src="javascripts/jquery.js"></script>
+<script src="javascripts/back.js"></script>
+<script>
+    $(function () {
+        var head=sessionStorage.getItem('head');
+        var username=sessionStorage.getItem('username');
+
+        $('.nav-information').css('background-image',"url("+head+")");
+        $('.top-information').css('background-image',"url("+head+")");
+        $('.user').text(username);
+
+
+        $('#register').click(function () {
+            var formData = new FormData();
+            formData.append('author',$('#author').val());
+            formData.append('email',$('#email').val());
+            formData.append('password',$('#password').val());
+            $.ajax({
+                url: "writer-register",
+                type: "POST",
+                data: formData,
+                processData: false,  // 不处理数据
+                contentType: false,   // 不设置内容类型
+                success: function (data) {
+                    //data代表的是register.js里的res.send函数参数的字符串内容
+                    alert("注册成功！");
+                    window.location.href="writer-login.html";
+                }
+            })
+        })
+
+    });
+
+
+
+
+</script>
+</body>
+</html>

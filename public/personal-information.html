@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指南，带你遨游无尽宇宙</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/nav.css">
+    <link rel="stylesheet" href="stylesheets/personal-information.css">
+    <script src="javascripts/jquery.js"></script>
+    <script>
+        $(function () {
+            // var userName=sessionStorage.setItem("username");
+            // var head=sessionStorage.getItem("head");
+
+            // $('.nav-bookstore').html('当前用户名：'+head);
+
+        })
+
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="nav-color"></div>
+<div class="nav">
+
+    <a href="index.html" class="nav-logo">
+    </a>
+    <div class="nav-search">
+        <form action="" >
+            <label for="search" class="nav-search-form">
+                <input type="text" id="search" size="27"  placeholder="玩家一号" class="nav-search-input">
+                <span>&nbsp</span>
+                <button class="nav-search-button">搜索</button>
+            </label>
+
+        </form>
+    </div>
+    <div class="nav-row">
+        <div class="back">退出登录</div>
+        <a href="#" class="nav-information"></a>
+        <a href="register.html" class="nav-bookstore">我的书架</a>
+    </div>
+</div>
+    <div class="block"></div>
+    <div class="main">
+        <div class="main-left"></div>
+        <div class="main-right">
+            <div class="p">
+                <div class="right-p"></div>
+            </div>
+            <div class="right-word-1">
+                <a href="register-writer.html" class="register-writer file">成为作家</a>
+                <span class="b">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                <label for="update-head">
+                    <a class="file">修改头像
+                    <input type="file" name="" id="update-head">
+                </a>
+                </label>
+                <span class="update-update" id="head">保存</span>
+<!--                <span class="b"></span>-->
+            </div>
+            <form enctype="multipart/form-data" class="update">
+                <label for="update-id">
+                    <span class="update-normal">ID：</span>
+                    <input type="text" placeholder="李大富豪" name="update-username" id="update-id" class="input">
+                </label>
+            </form>
+            <form enctype="multipart/form-data" class="update">
+                <label for="update-username">
+                <span class="update-normal">用户名：</span>
+                    <input type="text" placeholder="李大富豪" name="update-username" id="update-username" class="input">
+                    <span class="update-update" id="username">修改</span>
+                </label>
+
+            </form>
+
+            <form enctype="multipart/form-data" class="update">
+                <label for="update-number">
+                    <span class="update-normal">电话：</span>
+                    <input type="text" placeholder="17816072487" name="update-number" id="update-number" class="input">
+                    <span class="update-update" id="number">修改</span>
+                </label>
+            </form>
+            <form enctype="multipart/form-data" class="update">
+                <label for="update-email">
+                    <span class="update-normal">电子邮箱：</span>
+                    <input type="text" placeholder="572996481@qq.com" name="update-number" id="update-email" class="input">
+                    <span class="update-update" id="email">修改</span>
+                </label>
+            </form>
+            <form enctype="multipart/form-data" class="update-introduction">
+                <label for="update-introduction">
+                    <span class="update-normal1">个人简介</span>
+                    <input type="text" id="update-introduction" placeholder="大家好，我叫蔡徐坤，我会篮球唱跳rap">
+                </label>
+            </form>
+            <span class="update-update" id="introduction">修改</span>
+        </div>
+    </div>
+<div class="bottom">
+    <p>Copyright © 1998-2019ZhiNang All Rights Reserved
+    </p>
+</div>
+<script>
+    $(function () {
+        var img=sessionStorage.getItem('head');
+        var username=sessionStorage.getItem('username');
+        var number=sessionStorage.getItem('number');
+        var email=sessionStorage.getItem('email');
+        var userid=sessionStorage.getItem('userid');
+        var introduction=sessionStorage.getItem('introduction');
+        $('.right-p').css('background-image',"url("+img+")");
+        $('#update-username').attr("placeholder",username);
+        $('#update-email').attr("placeholder",email);
+        $('#update-number').attr("placeholder",number);
+        $('#update-id').attr("placeholder",userid);
+        $('#update-introduction').attr("placeholder",introduction);
+        var user_id=sessionStorage.getItem('userid');
+        console.log(user_id);
+        $('#update-head').click(function () {
+            var formData = new FormData();
+            formData.append('userid',user_id);
+            var normal=$('#update-head')[0].files[0];
+            formData.append('picture',normal);
+            $.ajax({
+                url:"update-head",
+                type:"POST",
+                data:formData,
+                processData: false,  // 不处理数据
+                contentType: false,   // 不设置内容类型
+                success:function (data) {
+                    //data代表的是register.js里的res.send函数参数的字符串内容
+                    $('.right-p').css('background-image',"url("+normal+")");
+                    sessionStorage.setItem('head',normal);
+                    alert("保存成功！");
+                }
+            })
+        });
+        $('#username').click(function () {
+            var formData = new FormData();
+            formData.append('userid',user_id);
+            var normal=$('#update-username').val();
+            formData.append('username',normal);
+            $.ajax({
+                url:"update-username",
+                type:"POST",
+                data:formData,
+                processData: false,  // 不处理数据
+                contentType: false,   // 不设置内容类型
+                success:function (data) {
+                    //data代表的是register.js里的res.send函数参数的字符串内容
+                    $('#update-username').attr("placeholder",normal);
+                    sessionStorage.setItem('username',normal);
+                    alert("保存成功！");
+                }
+            });
+            $('#number').click(function () {
+                var formData = new FormData();
+                formData.append('userid',user_id);
+                var normal=$('#update-number').val();
+                formData.append('number',normal);
+                $.ajax({
+                    url:"update-number",
+                    type:"POST",
+                    data:formData,
+                    processData: false,  // 不处理数据
+                    contentType: false,   // 不设置内容类型
+                    success:function (data) {
+                        //data代表的是register.js里的res.send函数参数的字符串内容
+                        $('#update-number').attr("placeholder",normal);
+                        sessionStorage.setItem('number',normal);
+                        alert("保存成功！");
+                    }
+                })
+            });
+            $('#email').click(function () {
+                var formData = new FormData();
+                formData.append('userid',user_id);
+                var normal=$('#update-email').val();
+                formData.append('email',normal);
+                $.ajax({
+                    url:"update-email",
+                    type:"POST",
+                    data:formData,
+                    processData: false,  // 不处理数据
+                    contentType: false,   // 不设置内容类型
+                    success:function (data) {
+                        //data代表的是register.js里的res.send函数参数的字符串内容
+                        $('#update-email').attr("placeholder",normal);
+                        sessionStorage.setItem('email',normal);
+                        alert("保存成功！");
+                    }
+                })
+            });
+            $('#introduction').click(function () {
+                var formData = new FormData();
+                formData.append('userid',user_id);
+                var normal=$('#update-introduction').val();
+                formData.append('introduction',normal);
+                $.ajax({
+                    url:"update-introduction",
+                    type:"POST",
+                    data:formData,
+                    processData: false,  // 不处理数据
+                    contentType: false,   // 不设置内容类型
+                    success:function (data) {
+                        //data代表的是register.js里的res.send函数参数的字符串内容
+                        $('#update-introduction').attr("placeholder",normal);
+                        sessionStorage.setItem('introduction',normal);
+                        alert("保存成功！");
+                        window.location.reload();
+                    }
+                })
+            })
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+
+ijavascript:S2589”"LRefactor this code so that this expression does not always evaluate to true.(Ä²Â÷
+Kjavascript:EmptyBlockÜ")Either remove or fill this block of code.(Ô‰íÌ
+ijavascript:S2589ˆH"LRefactor this code so that this expression does not always evaluate to true.(Ÿ¿Ã½
+Xjavascript:S1854é"<Remove this useless assignment to local variable "container"(ÇžÎH
+Yjavascript:S1854ã"7Remove this useless assignment to local variable "name"(ÅàÉ¿ýÿÿÿÿ
+[javascript:S18542"?Remove this useless assignment to local variable "destElements"(ö’Ðy
+Qjavascript:S1656Ø,"/Remove or correct this useless self-assignment.(…ÍÏðýÿÿÿÿ
+njavascript:S2589’G"LRefactor this code so that this expression does not always evaluate to true.(’ü¯Ýùÿÿÿÿ
+Mjavascript:S1264ë&"+Replace this "for" loop with a "while" loop(ÒöÁþøÿÿÿÿ
+Hjavascript:S1264Ô?"+Replace this "for" loop with a "while" loop(³ê
+njavascript:S2589œ"LRefactor this code so that this expression does not always evaluate to true.(µÿíÍûÿÿÿÿ
+Sjavascript:S1854Œ3"6Remove this useless assignment to local variable "tmp"(ú«”è
+qjavascript:S3523Ÿ"OReview this "Function" call and make sure its arguments are properly validated.(Çôî¼ùÿÿÿÿ
+Zjavascript:S18542">Remove this useless assignment to local variable "srcElements"(ö’Ðy
+Hjavascript:S1264ó&"+Replace this "for" loop with a "while" loop(ïž¾Ü
+Xjavascript:S1854é"<Remove this useless assignment to local variable "marginDiv"(ÇžÎH
+Sjavascript:S18542"7Remove this useless assignment to local variable "node"(ö’Ðy
+Xjavascript:S1854 0";Remove this useless assignment to local variable "fragment"(•²ßÖ
+bjavascript:S2137"ADo not use "undefined" to declare a parameter - use another name.(Ÿ©Ë©øÿÿÿÿ
+njavascript:S2589ú$"LRefactor this code so that this expression does not always evaluate to true.(—¹ùÿÿÿÿ
+Ujavascript:S1854 0"8Remove this useless assignment to local variable "first"(•²ßÖ
+ljavascript:S3403’G"JRemove this "!==" check; it will always be true. Did you mean to use "!="?(’ü¯Ýùÿÿÿÿ
+cjavascript:S2137ß"ADo not use "undefined" to declare a parameter - use another name.(Ÿ©Ë©øÿÿÿÿ
+Rjavascript:S1854é"6Remove this useless assignment to local variable "tds"(ÇžÎH

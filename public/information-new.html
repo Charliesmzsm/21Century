@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指南，带你遨游无尽宇宙</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/nav.css">
+    <link rel="stylesheet" href="stylesheets/writer-area.css">
+    <link rel="stylesheet" href="stylesheets/writer-area-control.css">
+    <link rel="stylesheet" href="stylesheets/bookstore.css">
+    <link rel="stylesheet" href="stylesheets/reader-information.css">
+
+</head>
+<body>
+<div class="nav-color"></div>
+<div class="nav">
+
+    <a href="index.html" class="nav-logo">
+    </a>
+    <div class="nav-search">
+        <form action="" >
+            <label for="search" class="nav-search-form">
+                <input type="text" id="search" size="27"  placeholder="玩家一号" class="nav-search-input">
+                <span>&nbsp</span>
+                <button class="nav-search-button">搜索</button>
+            </label>
+
+        </form>
+    </div>
+    <div class="nav-row">
+
+        <div class="back">退出登录</div>
+        <a href="information-new.html" class="nav-information" >
+        </a>
+        <a href="bookstore.html" class="nav-bookstore">我的书架</a>
+    </div>
+</div>
+<div class="block"></div>
+<div class="main">
+    <div class="main-left">
+        <a href="#" class="main-left-row special">个人信息</a>
+        <a href="bookstore.html" class="main-left-row ">我的书架</a>
+        <a href="register-writer.html" class="main-left-row writer"   >成为作家</a>
+    </div>
+    <div class="main-right">
+        <div class="right-top">
+            <div class="top-information"></div>
+            <span class="top-word">今天是2019年5月12日，周六，您已经来到指南<span class="top-word-special">0</span>天。</span>
+        </div>
+        <div class="right-title"> <span class="title-author">个人信息</span> <span class="title-en">PERSONAL INFORMATION</span></div>
+        <div class="top-username">
+            <span class="title-author user">张世明</span>
+            <span class="title-en">你好.</span>
+        </div>
+
+        <div class="right-bottom">
+            <div class="reader-head">
+                <div class="head-outside"></div>
+                <form enctype="multipart/form-data" class="reader-update-head">
+                    <label for="update-head">
+                        <a class="file">修改头像
+                            <input type="file" name="" id="update-head">
+                        </a>
+                    </label>
+                </form>
+            </div>
+            <form  enctype="multipart/form-data" class="reader-update">
+                <label for="reader-id" class="reader-form">
+                    <span class="reader-normal">ID：</span>
+                    <input type="text" placeholder="1234" name="update-username" id="reader-id" class="reader-input" readonly style=" pointer-events:none" >
+                </label>
+                <label for="reader-username" class="reader-form">
+                    <span class="reader-normal">用户名：</span>
+                    <input type="text" placeholder="张世明" name="update-username" id="reader-username" class="reader-input" readonly  style=" pointer-events:none">
+                </label>
+                <label for="reader-email" class="reader-form">
+                    <span class="reader-normal">电子邮箱：</span>
+                    <input type="text" placeholder="572996481@qq.com" name="update-email" id="reader-email" class="reader-input reader-email">
+                </label>
+                <label for="reader-number" class="reader-form">
+                    <span class="reader-normal">电话：</span>
+                    <input type="text" placeholder="17816072487" name="update-number" id="reader-number" class="reader-input reader-number">
+                </label>
+                <label for="reader-number" class="reader-form">
+                    <span class="reader-normal">个人简介：</span>
+                    <textarea type="text" placeholder="请输入你的信息" name="update-number" id="reader-introduction" class="reader-input reader-introduction"></textarea>
+                </label>
+                <div id="keep">保存</div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="javascripts/jquery.js"></script>
+<script src="javascripts/search.js"></script>
+<script src="javascripts/display.js"></script>
+<script src="javascripts/back.js"></script>
+<script src="javascripts/author-area.js"></script>
+<script>
+//   获取数据-->
+$(function () {
+    var head=sessionStorage.getItem('head');
+    var username=sessionStorage.getItem('username');
+    var number=sessionStorage.getItem('number');
+    var email=sessionStorage.getItem('email');
+    var userid=sessionStorage.getItem('userid');
+    var introduction=sessionStorage.getItem('introduction');
+    //修改input数据
+    $('.nav-information').css('background-image',"url("+head+")");
+    $('.head-outside').css('background-image',"url("+head+")");
+    $('.top-information').css('background-image',"url("+head+")");
+    $('#reader-id').attr('placeholder',userid);
+    $('.user').text(username);
+    $('#reader-email').attr("placeholder",email);
+    $('#reader-number').attr("placeholder",number);
+    $('#reader-introduction').attr("placeholder",introduction);
+    $('#reader-username').attr("placeholder",username);
+
+
+
+        var pageIndex = 0;
+        //注册新用户
+        //保存数据
+        $('#keep').click(function () {
+            var email_new= $('.reader-email').val();
+            var number_new= $('.reader-number').val();
+            var introduction_new= $('.reader-introduction').val();
+            //使用FormData用来上传文件及其他信息
+            var formData = new FormData();
+            formData.append('email',email_new);
+            formData.append('number', number_new);
+            formData.append('introduction', introduction_new);
+            formData.append('userid',userid);
+            $.ajax({
+                url: "update",
+                type: "POST",
+                data: formData,
+                processData: false,  // 不处理数据
+                contentType: false,   // 不设置内容类型
+                success: function (data) {
+                    //data代表的是register.js里的res.send函数参数的字符串内容
+                        alert("保存成功");
+                        sessionStorage.setItem("number",number_new);
+                        sessionStorage.setItem("email", email_new);
+                        sessionStorage.setItem("introduction", introduction_new);
+
+                        $('#reader-email').attr("placeholder", email_new);
+                        $('#reader-number').attr("placeholder", number_new);
+                        $('#reader-introduction').attr("placeholder", introduction_new);
+
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

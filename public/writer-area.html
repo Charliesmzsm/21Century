@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指南，带你遨游无尽宇宙</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/nav.css">
+    <link rel="stylesheet" href="stylesheets/writer-area.css">
+    <style>
+        .block{
+            height: 60px;
+        }
+        .main-right{
+            background-position: 0 0;
+        }
+    </style>
+</head>
+<body>
+<div class="nav-color"></div>
+<div class="nav">
+
+    <a href="index.html" class="nav-logo">
+    </a>
+    <div class="nav-search">
+        <form action="" >
+            <label for="search" class="nav-search-form">
+                <input type="text" id="search" size="27"  placeholder="玩家一号" class="nav-search-input">
+                <span>&nbsp</span>
+                <button class="nav-search-button">搜索</button>
+            </label>
+
+        </form>
+    </div>
+    <div class="nav-row">
+        <div class="back">退出登录</div>
+        <a href="#" class="nav-information"></a>
+    </div>
+</div>
+<div class="block"></div>
+<div class="main">
+    <div class="main-left">
+        <a href="writer-area.html"  class="main-left-row special">专区首页</a>
+        <a href="writer-area-control.html" class="main-left-row ">作品管理</a>
+    </div>
+    <div class="main-right">
+        <div class="right-top">
+            <div class="top-information"></div>
+            <span class="top-word">今天是2019年5月12日，周六，本月您以更新<span class="top-word-special">0</span>天，共计更新 <span class="top-word-special">0</span>字。</span>
+        </div>
+        <div class="right-title"> <span class="title-author">作家新闻</span> <span class="title-en">WRITER'S NEWS</span></div>
+        <div class="top-username">
+            <span class="title-author name">张世明</span>
+            <span class="title-en">你好.</span>
+        </div>
+        <div class="right-bottom">
+
+            <a href="#" class="right-bottom-word"><span class="red">· &nbsp&nbsp&nbsp</span><span class="word">515文创节日开幕啦！</span></a>
+            <a href="#" class="right-bottom-word"><span class="red">· &nbsp&nbsp&nbsp</span><span class="word">2019“千字万金”对话小说征文大赛！</span></a>
+            <a href="#" class="right-bottom-word"><span class="red">· &nbsp&nbsp&nbsp</span><span class="word">创作提示公告！</span></a>
+            <a href="#" class="right-bottom-word"><span class="red">· &nbsp&nbsp&nbsp</span><span class="word">2019中原祭宣奖</span></a>
+            <a href="#" class="right-bottom-word"><span class="red">· &nbsp&nbsp&nbsp</span><span class="word">假装有内容</span></a>
+
+
+        </div>
+    </div>
+</div>
+<div class="bottom-back">
+    <div class="bottom">
+
+        <div class="btitle">
+            <p class="first">书籍专区</p>
+            <a href="#" class="second">全部书籍</a>
+            <a href="book-information.html" class="bbook" id="11">知觉之门</a>
+            <a href="book-information.html" class="bbook" id="13">乡村教师</a>
+            <a href="book-information.html" class="bbook" id="14">球状闪电</a>
+            <a href="book-information.html" class="bbook" id="9">机械幻想</a>
+        </div>
+        <div class="btitle">
+            <p class="first">作家专区</p>
+            <a href="writer-login.html" class="second">作家登录</a>
+            <a href="register-writer.html" class="second">作家注册</a>
+            <a href="writer-area.html" class="second">作家新闻</a>
+            <a href="writer-area-control.html" class="second">书籍管理</a>
+        </div>
+        <div class="btitle">
+            <p class="first">读者专区</p>
+            <a href="login.html" class="second">读者登录</a>
+            <a href="register.html" class="second">读者注册</a>
+            <a href="information-new.html" class="second">我的信息</a>
+            <a href="bookstore.html" class="second">我的书架</a>
+        </div>
+
+    </div>
+</div>
+<script src="javascripts/search.js"></script>
+<script src="javascripts/display.js"></script>
+<script src="javascripts/bottom_book.js"></script>
+<script src="javascripts/jquery.js"></script>
+<script src="javascripts/back.js"></script>
+<script>
+    $(function () {
+        var head=sessionStorage.getItem('author-head');
+        var author_name=sessionStorage.getItem('author-name');
+        $('.nav-information').css('background-image',"url("+head+")");
+        $('.top-information').css('background-image',"url("+head+")");
+        $('.name').text(author_name);
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指南，带你遨游无尽宇宙</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/nav.css">
+    <link rel="stylesheet" href="stylesheets/writer-area.css">
+    <link rel="stylesheet" href="stylesheets/writer-area-control.css">
+    <style>
+        .block{
+            height: 60px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="nav-color"></div>
+<div class="nav">
+
+    <a href="index.html" class="nav-logo">
+    </a>
+    <div class="nav-search">
+        <form action="" >
+            <label for="search" class="nav-search-form">
+                <input type="text" id="search" size="27"  placeholder="玩家一号" class="nav-search-input">
+                <span>&nbsp</span>
+                <button class="nav-search-button">搜索</button>
+            </label>
+
+        </form>
+    </div>
+    <div class="nav-row">
+        <div class="back">退出登录</div>
+        <a href="#" class="nav-information"></a>
+
+    </div>
+</div>
+<div class="block"></div>
+<div class="main">
+    <div class="main-left">
+        <a href="writer-area.html"  class="main-left-row ">专区首页</a>
+        <a href="#" class="main-left-row special">作品管理</a>
+    </div>
+    <div class="main-right">
+        <div class="right-top">
+            <div class="top-information"></div>
+            <span class="top-word">今天是2019年5月12日，周六，本月您以更新<span class="top-word-special">0</span>天，共计更新 <span class="top-word-special">0</span>字。</span>
+        </div>
+        <div class="right-title"> <span class="title-author">作品管理</span> <span class="title-en">MYBOOK</span></div>
+        <div class="top-username">
+            <span class="title-author name">张世明</span>
+            <span class="title-en">你好.</span>
+        </div>
+        <div class="right-bottom">
+
+
+<!--            已经创建书-->
+            <div class="book-list">
+                <div class="book">
+                    <a href="#" class="book-name">美丽新世界</a>
+                    <a href="#" class="book-charter">第一章</a>
+                    <a href="#" class="book-about">一幢只有34层的灰色楼房蹲伏在地上...</a>
+                    <div id="update">更新</div>
+
+                </div>
+<!--                <div class="book">-->
+<!--                    <a href="#" class="book-name">天父地母</a>-->
+<!--                    <a href="#" class="book-charter">第一章</a>-->
+<!--                    <a href="#" class="book-about">耶耶是朝丹天耶的儿子，我们地上的父。。。</a>-->
+<!--                    <span class="update">更新</span>-->
+
+<!--                </div>-->
+            </div>
+
+
+
+
+<!--            还未创建任何书籍-->
+            <div class="creat" >
+                <span>您没有发布任何作品</span>
+                <span>&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                <span class="create" >创建作品</span>
+<!--                <span class="popuptext" id="myPopup">提示信息!</span>-->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- 更新小说-->
+<div class="update-out">
+    <div class="update-point">
+        <form  enctype="multipart/form-data" class="update-pop">
+            <span class="update-pop-back">返回</span>
+            <span class="pop-word">作品更新</span>
+            <label for="novel-chapter">
+                <span class="novel-normal">书名：</span>
+                <input type="text" class="update-number"   placeholder="&nbsp&nbsp&nbsp&nbsp请输入书名。">
+            </label>
+            <label for="novel-chapter">
+                <span class="novel-normal">章节：</span>
+                <input type="text" class="update-number"  placeholder="&nbsp&nbsp&nbsp&nbsp请输入章节（数字）。">
+            </label>
+            <label for="novel-content" class="content-label">
+                <span class="novel-normal">内容：</span>
+                <textarea type="text" id="update-content" placeholder="&nbsp&nbsp&nbsp&nbsp请输入文章内容"></textarea>
+            </label>
+            <div class="novel-create " id="novel-update">更新我的小说</div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<!--创建小说-->
+<div class="out">
+    <div class="point">
+        <form  enctype="multipart/form-data" class="pop">
+            <span class="pop-back">返回</span>
+            <span class="pop-word">作品创建</span>
+            <label for="novel-name">
+            <span class="novel-normal">书名：</span>
+            <input type="text" id="novel-name" class="input" placeholder="&nbsp&nbsp&nbsp&nbsp请输入书名">
+        </label>
+            <label for="novel-chapter">
+                <span class="novel-normal">简介：</span>
+                <input type="text" id="novel-chapter" class="input" placeholder="&nbsp&nbsp&nbsp&nbsp请输入内容简介。">
+            </label>
+            <label for="novel-type">
+                <span class="novel-normal">类型：</span>
+                <select name="novel-type" id="novel-type" class="input" >
+                    <option value="赛博朋克">赛博朋克</option>
+                    <option value="后启时代">后启时代</option>
+                    <option value="错列历史">错列历史</option>
+                    <option value="反乌托邦">反乌托邦</option>
+                    <option value="蒸汽朋克">蒸汽朋克</option>
+                    <option value="硬科幻">硬科幻</option>
+                    <option value="软科幻">软科幻</option>
+                </select>
+            </label>
+<!--            <label for="novel-content" class="content-label">-->
+<!--                <span class="novel-normal">章节：</span>-->
+<!--                <textarea type="text" id="novel-content" class="input" placeholder="&nbsp&nbsp&nbsp&nbsp请输入文章内容"></textarea>-->
+<!--            </label>-->
+            <div class="novel-create" id="novel-create">创建我的小说</div>
+        </form>
+    </div>
+</div>
+
+
+<div class="bottom-back">
+    <div class="bottom">
+
+        <div class="btitle">
+            <p class="first">书籍专区</p>
+            <a href="#" class="second">全部书籍</a>
+            <a href="book-information.html" class="bbook" id="11">知觉之门</a>
+            <a href="book-information.html" class="bbook" id="13">乡村教师</a>
+            <a href="book-information.html" class="bbook" id="14">球状闪电</a>
+            <a href="book-information.html" class="bbook" id="9">机械幻想</a>
+        </div>
+        <div class="btitle">
+            <p class="first">作家专区</p>
+            <a href="writer-login.html" class="second">作家登录</a>
+            <a href="register-writer.html" class="second">作家注册</a>
+            <a href="writer-area.html" class="second">作家新闻</a>
+            <a href="writer-area-control.html" class="second">书籍管理</a>
+        </div>
+        <div class="btitle">
+            <p class="first">读者专区</p>
+            <a href="login.html" class="second">读者登录</a>
+            <a href="register.html" class="second">读者注册</a>
+            <a href="information-new.html" class="second">我的信息</a>
+            <a href="bookstore.html" class="second">我的书架</a>
+        </div>
+
+    </div>
+</div>
+<script src="javascripts/search.js"></script>
+<script src="javascripts/display.js"></script>
+<script src="javascripts/jquery.js"></script>
+<script src="javascripts/bottom_book.js"></script>
+<script src="javascripts/back.js"></script>
+<script>
+    $(function () {
+        var head=sessionStorage.getItem('author-head');
+        var author_name=sessionStorage.getItem('author-name');
+        var author_id=sessionStorage.getItem('author-id');
+        $('.nav-information').css('background-image',"url("+head+")");
+        $('.top-information').css('background-image',"url("+head+")");
+        $('.name').text(author_name);
+
+
+        //创建更新小说  按钮
+
+        $('.create').click(function () {
+            $('.out').css("display","inline-block");
+        });
+        $('#update').click(function () {
+            $('.update-out').css("display","inline-block");
+        });
+        $('.pop-back').click(function () {
+            $('.out').css("display","none");
+        });
+
+        $('.update-pop-back').click(function () {
+           $('.update-out').css("display","none");
+        });
+
+
+        var author_id=sessionStorage.getItem('author-id');
+
+    //    创建书籍
+        $('#novel-create').click(function () {
+            var formData = new FormData();
+            formData.append('novel_name',$('#novel-name').val());
+            formData.append('novel_type',$('#novel-type').val());
+            formData.append('novel_chapter',$('#novel-chapter').val());
+            formData.append('author_id',author_id);
+            formData.append('author_name',author_name);
+            $.ajax({
+                url: "novel-create",
+                type: "POST",
+                data: formData,
+                processData: false,  // 不处理数据
+                contentType: false,   // 不设置内容类型
+                success: function (data) {
+                    //data代表的是register.js里的res.send函数参数的字符串内容
+                    alert("注册成功！");
+                    window.location.reload();
+                }
+            })
+        });
+
+        //获取作家书籍信息
+        var authorIdUrl='author-book?content='+author_id;
+        $.get(
+            authorIdUrl,
+            '',
+            function (data)
+            {
+                //将服务器的JSON字符串转换为JSON对象
+                var bookList=JSON.parse(data);
+                var name=bookList[0].novelname;
+
+                //清空区域
+                    if(data.length===0)
+                    {
+                        $('.book-list').css('display','none');
+                        $('.creat').css('display','flex');
+                    }else{
+
+                        $('.book-list').css('display','flex');
+                        $('.creat').css('display','none');
+
+
+                        $('.book-list').empty();
+
+                        //动态创建元素
+                        //遍历所有用户信息
+                        var list=$('.book-list');
+                        for(var i=0;i<bookList.length;i++)
+                        {
+                            var book=$("<div class='book'></div>");
+                            book.appendTo(list);
+                            var name=$("<a href='#' class='book-name'>"+bookList[i].novelname+"</a>");
+                            name.appendTo(book);
+                            var  chapter=$("<a href='#' class='book-charter'>"+"第一章"+"</a>");
+                            chapter.appendTo(book);
+                            var  introduction=$("<a href='#' class='book-about'>"+bookList[i].introduction+"</a>");
+                            introduction.appendTo(book);
+                            var update=$("<span class='update'>更新</span>");
+                            update.appendTo(book);
+                        }
+                    }
+
+
+
+            }
+        )
+
+
+    })
+
+</script>
+</body>
+</html>

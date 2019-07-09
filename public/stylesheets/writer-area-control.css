@@ -1,0 +1,287 @@
+.right-top{
+    background-image: url('../img/47.jpg');
+
+}
+.creat{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create{
+    display: inline-block;
+    width: 110px;
+    height: 40px;
+    color: white;
+    font-size: 1.1em;
+    background-color: #ff7675;
+    border:1px solid #ff7675;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+/* 创建文件*/
+.out{
+    display:none;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    position:fixed;
+    background:rgba(0,0,0,0.3)
+}
+.point{
+    position:absolute;
+    left:50%;
+    top:50%;
+
+}
+.pop{
+    width:500px;
+    max-height: 550px;
+    min-height: 550px;
+    position:absolute;
+    left:-250px;
+    top:-250px;
+    padding-top: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left:100px solid #ec414d;
+}
+.pop-back{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color:#ec414d;
+    font-size: 22px;
+    border-bottom:8px solid #ec414d;
+    cursor:pointer;
+}
+.pop-word{
+
+    color:#3e3d43;
+    font-size: 2em;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+.pop label{
+    width:400px;
+
+}
+.novel-normal{
+    display: inline-block;
+    width: 80px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 5px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-indent: 0;
+    line-height: 20px;
+    cursor: pointer;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+.input{
+    margin-top: 20px;
+    max-width: 300px;
+    min-width: 290px;
+    height: 40px;
+    font-size: 15px;
+    border: 1px solid #a9a6a5;
+    border-radius:4px;
+    font-weight: lighter;
+    outline: none;
+}
+.input:focus{
+    box-sizing: border-box;
+    border-right:10px solid #ec414d;
+
+}
+#novel-type{
+    background: #fff\9;
+    color:#666;
+    padding: 8px;
+    outline: none;
+}
+.content-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#novel-content{
+    max-height: 120px;
+    min-height: 120px;
+    max-width: 300px;
+    min-width: 300px;
+}
+#update-content{
+    max-height: 220px;
+    min-height: 220px;
+    max-width: 300px;
+    min-width:300px;
+    margin-top: 20px;
+    height: 40px;
+    font-size: 15px;
+    border-radius:4px;
+    font-weight: lighter;
+    outline: none;
+
+}
+.update-number{
+    margin-top: 20px;
+    max-width: 300px;
+    min-width: 300px;
+    height: 40px;
+    font-size: 15px;
+    border: 1px solid #a9a6a5;
+    border-radius:4px;
+    font-weight: lighter;
+    outline: none;
+}
+#update-content:focus,.update-number:focus{
+    max-width: 290px;
+    min-width:290px;
+    border-right:10px solid #00aa9a;
+}
+#novel-update{
+    background-color: #00aa9a;
+}
+.novel-create{
+    margin: 10px auto;
+    width: 300px;
+    height: 50px;
+    background-color: #ff7979;
+
+    text-align: center;
+    line-height: 50px;
+    color:white;
+    font-size: 20px;
+    letter-spacing: 10px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.book-list{
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    display: none;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book{
+    margin-top: 20px;
+    max-width: 90%;
+    min-width: 90%;
+    min-height: 50px;
+    max-height: 50px;
+    line-height: 40px;
+}
+.book-name{
+    display: inline-block;
+    width: 100px;
+    color:#3399cc;;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.book-charter{
+    display: inline-block;
+    width: 50px;
+    color:#a9a6a5;
+    font-size: 14px;
+    margin-right: 25px;
+}
+.book-about{
+    display: inline-block;
+    width:380px;
+    color:#a9a6a5;
+    font-size: 16px;
+    border-bottom: 1px solid #a9a6a5;
+    margin-right: 30px;
+}
+.update{
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #00aa9a;
+    border-radius: 5px;
+    color:white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 10px 0 rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+
+/* 更新*/
+.update-out{
+    display:none;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    position:fixed;
+    background:rgba(0,0,0,0.3)
+}
+.update-point{
+    position:absolute;
+    left:50%;
+    top:50%;
+}
+.update-pop{
+    width:500px;
+    max-height: 550px;
+    min-height: 550px;
+    position:absolute;
+    left:-250px;
+    top:-250px;
+    padding-top: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left:100px solid #00aa9a;
+}
+.update-pop-back{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #00aa9a;
+    font-size: 22px;
+    border-bottom:8px solid  #00aa9a;
+    cursor:pointer;
+}

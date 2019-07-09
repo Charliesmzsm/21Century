@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指南，带你遨游无尽宇宙</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/nav.css">
+    <link rel="stylesheet" href="stylesheets/writer-area.css">
+    <link rel="stylesheet" href="stylesheets/bookstore.css">
+    <link rel="stylesheet" href="stylesheets/writer-area-control.css">
+</head>
+<body>
+<div class="nav-color"></div>
+<div class="nav">
+
+    <a href="index.html" class="nav-logo">
+    </a>
+    <div class="nav-search">
+        <form action="" >
+            <label for="search" class="nav-search-form">
+                <input type="text" id="search" size="27"  placeholder="玩家一号" class="nav-search-input">
+                <span>&nbsp</span>
+                <button class="nav-search-button">搜索</button>
+            </label>
+
+        </form>
+    </div>
+    <div class="nav-row">
+
+        <div class="back">退出登录</div>
+        <a href="information-new.html" class="nav-information" >
+
+        </a>
+        <a href="bookstore.html" class="nav-bookstore">我的书架</a>
+    </div>
+</div>
+<div class="block"></div>
+<div class="main">
+    <div class="main-left">
+        <a href="information-new.html" class="main-left-row">个人信息</a>
+        <a href="#" class="main-left-row special">我的书架</a>
+        <a href="register-writer.html" class="main-left-row writer"   >成为作家</a>
+    </div>
+    <div class="main-right">
+            <div class="right-top">
+                <div class="top-information"></div>
+                <span class="top-word">今天是2019年5月12日，周六，您已经来到指南<span class="top-word-special">0</span>天。</span>
+            </div>
+            <div class="right-title"> <span class="title-author">我的书架</span> <span class="title-en">MY BOOKSTORE</span></div>
+            <div class="top-username">
+                <span class="title-author user">张世明</span>
+                <span class="title-en">你好.</span>
+            </div>
+            <div class="right-bottom">
+                <div class="book-list">
+                    <div class="book">
+                        <a href="#" class="book-name">天父地母</a>
+                        <a href="#" class="book-charter">第一章</a>
+                        <a href="#" class="book-about">耶耶是朝丹天耶的儿子，我们地上的父。。。</a>
+                        <div class="del">删除</div>
+                    </div>
+                </div>
+
+        <div class="none">
+            <h1>您还未添加任何书籍哦！</h1>
+            <a href="all-book.html" class="add">添加书籍</a>
+        </div>
+<!--                没有添加书-->
+
+
+            </div>
+    </div>
+</div>
+
+<script src="javascripts/jquery.js"></script>
+<script src="javascripts/search.js"></script>
+<script src="javascripts/display.js"></script>
+<script src="javascripts/del.js"></script>
+<script src="javascripts/content.js"></script>
+<script>
+    $(function () {
+        var head=sessionStorage.getItem('head');
+        var username=sessionStorage.getItem('username');
+
+
+        $('.nav-information').css('background-image',"url("+head+")");
+        $('.top-information').css('background-image',"url("+head+")");
+        $('.user').text(username);
+        var userid=sessionStorage.getItem('userid');
+        var  author=sessionStorage.getItem('author-head');
+        $('#author-area').click(function () {
+            if(author==null)
+            {
+                $('#author-area').attr('href','writer-login.html');
+            }
+        });
+
+        //删除书籍
+
+
+
+
+        //     获取书籍信息
+        var bookstoreUrl='reader-book?content='+userid;
+        $.get(
+            bookstoreUrl,
+            '',
+            function (data) {
+                var bookList=JSON.parse(data);
+                var name=bookList[0].novelname;
+
+                //清空区域
+                if(name===undefined){
+                    $('.none').css("display","flex");
+                    $('.book-list').css("display","none");
+                }else{
+                    $('.none').css("display","none");
+                    $('.book-list').css("display","flex");
+
+                    $('.book-list').empty();
+
+                    //    动态创建元素
+                    for(var i=0;i<bookList.length;i++)
+                    {
+                        var list=$('.book-list');
+                        var book=$("<div class='book'></div>");
+                        book.appendTo(list);
+                        var name=$("<a href='#' class='book-name'>"+bookList[i].novelname+"</a>");
+                        name.appendTo(book);
+                        var  chapter=$("<a href='#' class='book-charter'>"+"第一章"+"</a>");
+                        chapter.appendTo(book);
+                        var  introduction=$("<a href='#' class='book-about' >"+bookList[i].introduction+"</a>");
+                        introduction.appendTo(book);
+                        var del=$("<span class='delete' id='"+ bookList[i].novelid +" ' >删除</span>");
+                        del.appendTo(book);
+                    }
+
+
+                }
+
+            }
+        );
+        //删除\\
+
+    });
+
+</script>
+<script src="javascripts/back.js"></script>
+<script src="javascripts/author-area.js"></script>
+
+</body>
+</html>
